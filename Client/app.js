@@ -1,12 +1,22 @@
 (function($){
     $.ajax({
         url: 'https://localhost:44325/api/movie',
-        dataType: 'json',
         type: 'get',
-        contentType: 'application/json',
-        data: JSON
+        dataType: 'json',
+        success: function(data){
+            $.each(data, function(index, movie){
+                    $("#tableData").append(`<tr id=${index}></tr>`);
+                    $("#" + index).append("<td>" + movie["Title"] +"</td>");
+                    $("#" + index).append("<td>" + movie["Director"] + "</td>");
+                    $("#" + index).append("<td>" + movie["Genre"] + "</td>");
+            })
+            
+        },
+        error: function(errorThrown){
+            console.log (errorThrown);
+        }
     })
-}
+})(jQuery);
 (function($){
     function processForm( e ){
         var dict = {
