@@ -31,7 +31,7 @@ namespace WebAPISample.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            var movie = _context.Movies.Where(m => m.MovieId == id);
+            var movie = _context.Movies.Where(m => m.MovieId == id).FirstOrDefault();
             return Ok(movie);
         }
 
