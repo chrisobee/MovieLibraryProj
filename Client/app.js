@@ -9,7 +9,7 @@
                     $("#" + index).append("<td>" + movie["Title"] +"</td>");
                     $("#" + index).append("<td>" + movie["Director"] + "</td>");
                     $("#" + index).append("<td>" + movie["Genre"] + "</td>");
-            })
+            });
             
         },
         error: function(errorThrown){
@@ -17,6 +17,7 @@
         }
     })
 })(jQuery);
+
 (function($){
     function processForm( e ){
         var dict = {
@@ -43,7 +44,7 @@
     }
 
     $('#my-form').submit( processForm );
-})(jQuery));
+})(jQuery);
 
 (function($){
     function processForm( e ){
