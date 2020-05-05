@@ -23,6 +23,7 @@
         $("#movieInfo").append(`<li>Director: ${data["director"]}</li>`);
         $("#movieInfo").append(`<li>Genre: ${data["genre"]}</li>`);
         $("#editMovie").html(`<button><a href="edit.html?${movieId}">Edit Movie</a></button>`);
+        $("#deleteMovie").html(`<button><a href="delete.html?${movieId}">Delete Movie</a></button>`)
     });
 })(jQuery);
 
@@ -89,4 +90,34 @@
         e.preventDefault();
     }
     $('#edit-form').submit( processForm );
+})(jQuery);
+
+(function($){
+    let movieId = location.search.slice(1);
+    $.get(`https://localhost:44325/api/movie/${movieId}`, function(data){
+        $("#deleteMovieInfo").html(`<li>Title: ${data["title"]}</li>`);
+        $("#deleteMovieInfo").append(`<li>Director: ${data["director"]}</li>`);
+        $("#deleteMovieInfo").append(`<li>Genre: ${data["genre"]}</li>`);
+    });
+})(jQuery);
+
+(function($){
+    let movieId = location.search.slice(1);
+    function processForm( e ){
+        var dict = {
+            MovieId : parseInt(movieId),
+        };
+        $.ajax({
+            url: `https://localhost:44325/api/movie/${movieId}`,
+            type: 'delete',
+            success: function(data, textStatus, jQxhr){
+                $('#Delete pre').html(data);
+            },
+            error: function( jqXhr, textStatus, errorThrown ){
+                console.log( errorThrown );
+            }
+        });
+        e.preventDefault();
+    }
+    $('#delete-form').submit( processForm );
 })(jQuery);
