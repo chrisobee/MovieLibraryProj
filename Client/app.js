@@ -6,7 +6,7 @@
         contentType: 'application/json',
         data: JSON
     })
-}
+});
 (function($){
     function processForm( e ){
         var dict = {
@@ -33,11 +33,12 @@
     }
 
     $('#my-form').submit( processForm );
-})(jQuery));
+})(jQuery);
 
 (function($){
     function processForm( e ){
         var dict = {
+            MovieId : ,
             Title : this["title"].value,
             Director : this["director"].value,
             Genre : this["genre"].value
@@ -49,7 +50,7 @@
             contentType: 'application/json',
             data: JSON.stringify(dict),
             success: function(data, textStatus, jQxhr){
-                $('#response pre').html(data);
+                $('#Edit pre').html(data);
             },
             error: function( jqXhr, textStatus, errorThrown ){
                 console.log( errorThrown );
