@@ -1,3 +1,6 @@
+function redirectToHomePage(){
+    window.location.replace("GetMovies.html");
+}
 (function($){
     $.ajax({
         url: 'https://localhost:44325/api/movie',
@@ -59,10 +62,11 @@
 
     $.get(`https://localhost:44325/api/movie/${movieId}`, function(data){
         $("#edit-form").html(`<input type="hidden" name="movieId" value="${movieId}" />`);
-        $("#edit-form").append(`<input type="text" name="title" value="${data["title"]}" />`);
-        $("#edit-form").append(`<input type="text" name="director" value="${data["director"]}" />`);
-        $("#edit-form").append(`<input type="text" name="genre" value="${data["genre"]}" />`);
+        $("#edit-form").append(`<input type="text" name="title" value="${data["title"]}" required=true />`);
+        $("#edit-form").append(`<input type="text" name="director" value="${data["director"]}" required=true />`);
+        $("#edit-form").append(`<input type="text" name="genre" value="${data["genre"]}" required=true />`);
         $("#edit-form").append(`<button type="submit">Submit</button>`);
+        $("#backToMovie").append(`<a href="MovieById.html?${movieId}">Back to Movie</a>`);
     })
 })(jQuery);
 
@@ -85,6 +89,11 @@
             },
             error: function( jqXhr, textStatus, errorThrown ){
                 console.log( errorThrown );
+            },
+            complete: function(jQxhr, status){
+                if(jQxhr.status == 200){
+                    redirectToHomePage();
+                }
             }
         });
         e.preventDefault();
