@@ -39,11 +39,7 @@ namespace WebAPISample.Controllers
         [HttpPost]
         public IActionResult Post([FromBody]Movie value)
         {
-            Movie movieToAdd = new Movie();
-            movieToAdd.Title = value.Title;
-            movieToAdd.Genre = value.Genre;
-            movieToAdd.Director = value.Director;
-            _context.Add(movieToAdd);
+            _context.Add(value);
             _context.SaveChanges();
             return Ok();
         }

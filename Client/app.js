@@ -5,18 +5,27 @@
         dataType: 'json',
         success: function(data){
             $.each(data, function(index, movie){
-                    $("#tableData").append(`<tr id=${index}></tr>`);
-                    $("#" + index).append("<td>" + movie["Title"] +"</td>");
-                    $("#" + index).append("<td>" + movie["Director"] + "</td>");
-                    $("#" + index).append("<td>" + movie["Genre"] + "</td>");
-            })
-            
+                $("#movieTitles").append(`<li>
+                    <a href="MovieById.html?${movie["MovieId"]}">${movie["Title"]}</a>
+                </li>`);
+            });
         },
         error: function(errorThrown){
             console.log (errorThrown);
         } 
     })
 })(jQuery);
+
+(function($){
+    let movieId = location.search.slice(1);
+    $.get(`https://localhost:44325/api/movie/${movieId}`, function(data){
+        $("#movieInfo").html(`<li>Title: ${data["title"]}</li>`);
+        $("#movieInfo").append(`<li>Director: ${data["director"]}</li>`);
+        $("#movieInfo").append(`<li>Genre: ${data["genre"]}</li>`);
+        $("#editMovie").html(`<button><a href="edit.html?${movieId}">Edit Movie</a></button>`);
+    });
+})(jQuery);
+
 (function($){
     function processForm( e ){
         var dict = {
@@ -45,13 +54,39 @@
     $('#my-form').submit( processForm );
 })(jQuery);
 (function($){
-    let id = 6
-    $.ajax({
-        url: 'https://localhost:44325/api/movie',
-        dataType: 'json',
-        type: 'delete',
-        contentType: 'application/json',
-        data: id,
-        success: function()
+    let movieId = location.search.slice(1);
+
+    $.get(`https://localhost:44325/api/movie/${movieId}`, function(data){
+        $("#edit-form").html(`<input type="hidden" name="movieId" value="${movieId}" />`);
+        $("#edit-form").append(`<input type="text" name="title" value="${data["title"]}" />`);
+        $("#edit-form").append(`<input type="text" name="director" value="${data["director"]}" />`);
+        $("#edit-form").append(`<input type="text" name="genre" value="${data["genre"]}" />`);
+        $("#edit-form").append(`<button type="submit">Submit</button>`);
     })
+})(jQuery);
+
+(function($){
+    function processForm( e ){
+        var dict = {
+            MovieId : parseInt(this["movieId"].value),
+            Title : this["title"].value,
+            Director : this["director"].value,
+            Genre : this["genre"].value
+        };
+        $.ajax({
+            url: 'https://localhost:44325/api/movie',
+            dataType: 'json',
+            type: 'put',
+            contentType: 'application/json',
+            data: JSON.stringify(dict),
+            success: function(data, textStatus, jQxhr){
+                $('#Edit pre').html(data);
+            },
+            error: function( jqXhr, textStatus, errorThrown ){
+                console.log( errorThrown );
+            }
+        });
+        e.preventDefault();
+    }
+    $('#edit-form').submit( processForm );
 })(jQuery);
