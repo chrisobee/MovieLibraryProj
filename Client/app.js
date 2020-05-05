@@ -15,7 +15,7 @@ function redirectToHomePage(){
         },
         error: function(errorThrown){
             console.log (errorThrown);
-        }
+        } 
     })
 })(jQuery);
 
@@ -56,7 +56,6 @@ function redirectToHomePage(){
 
     $('#my-form').submit( processForm );
 })(jQuery);
-
 (function($){
     let movieId = location.search.slice(1);
 
