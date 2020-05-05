@@ -5,17 +5,24 @@
         dataType: 'json',
         success: function(data){
             $.each(data, function(index, movie){
-                    $("#tableData").append(`<tr id=${index}></tr>`);
-                    $("#" + index).append("<td>" + movie["Title"] +"</td>");
-                    $("#" + index).append("<td>" + movie["Director"] + "</td>");
-                    $("#" + index).append("<td>" + movie["Genre"] + "</td>");
+                $("#movieTitles").append(`<li>
+                    <a href="MovieById.html?${movie["MovieId"]}">${movie["Title"]}</a>
+                </li>`);
             });
-            
         },
         error: function(errorThrown){
             console.log (errorThrown);
         }
     })
+})(jQuery);
+
+(function($){
+    let movieId = location.search.slice(1);
+    $.get(`https://localhost:44325/api/movie/${movieId}`, function(data){
+        $("#movieInfo").html(`<li>Title: ${data["title"]}</li>`);
+        $("#movieInfo").append(`<li>Director: ${data["director"]}</li>`);
+        $("#movieInfo").append(`<li>Genre: ${data["genre"]}</li>`);
+    });
 })(jQuery);
 
 (function($){
@@ -49,7 +56,6 @@
 (function($){
     function processForm( e ){
         var dict = {
-            MovieId : ,
             Title : this["title"].value,
             Director : this["director"].value,
             Genre : this["genre"].value
