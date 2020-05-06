@@ -49,6 +49,11 @@ function redirectToHomePage(){
             },
             error: function( jqXhr, textStatus, errorThrown ){
                 console.log( errorThrown );
+            },
+            complete: function(jqXhr){
+                if(jqXhr.status == 200){
+                    redirectToHomePage();
+                }
             }
         });
 
@@ -124,6 +129,11 @@ function redirectToHomePage(){
             },
             error: function( jqXhr, textStatus, errorThrown ){
                 console.log( errorThrown );
+            },
+            complete: function(jQxhr){
+                if(jQxhr.status == 200){
+                    redirectToHomePage();
+                }
             }
         });
         e.preventDefault();
