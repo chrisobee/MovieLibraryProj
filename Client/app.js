@@ -36,7 +36,8 @@ function redirectToHomePage(){
         var dict = {
         	Title : this["title"].value,
             Director: this["director"].value,
-            Genre: this["genre"].value
+            Genre: this["genre"].value,
+            ImageURL: this["imageURL"].value
         };
 
         $.ajax({
