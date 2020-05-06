@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>jQuery AJAX DELETE Form</title>
+    <title>jQuery AJAX POST Form</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <link rel="stylesheet" type="text/css" href="./bootstrap.min (3).css" />
 </head>
 <body>
 
-<div id="Delete">
+<div id="response">
     <pre></pre>
 </div>
-<h2>Are You Sure You Want to Delete This Movie?</h2>
-<ul id="deleteMovieInfo"></ul>
-<form id="delete-form">
+<h2>Add Movie</h2>
+<form id="my-form">
+    <input type="text" name="title" placeholder="Title" />
+    <input type="text" name="director" placeholder="Director" />
+    <input type="text" name="genre" placeholder="Genre" />
+
     <button type="submit">Submit</button>
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
