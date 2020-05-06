@@ -26,8 +26,8 @@ function redirectToHomePage(){
         $("#movieInfo").html(`<li>Title: ${data["title"]}</li>`);
         $("#movieInfo").append(`<li>Director: ${data["director"]}</li>`);
         $("#movieInfo").append(`<li>Genre: ${data["genre"]}</li>`);
-        $("#editMovie").html(`<button style="position: relative; left: 50px; top:30px;"><a href="edit.html?${movieId}">Edit Movie</a></button>`);
-        $("#deleteMovie").html(`<button style="position: relative; left: 50px; top:30px;"><a href="delete.html?${movieId}">Delete Movie</a></button>`)
+        $("#editMovie").html(`<a style="position: relative; left: 50px; top:30px;" class="btn btn-warning" href="edit.html?${movieId}">Edit Movie</a>`);
+        $("#deleteMovie").html(`<a style="position: relative; left: 50px; top:30px;" class="btn btn-danger" href="delete.html?${movieId}">Delete Movie</a>`)
     });
 })(jQuery);
 
@@ -71,7 +71,7 @@ function redirectToHomePage(){
         $("#edit-form").append(`<input type="text" name="title" value="${data["title"]}" required=true />`);
         $("#edit-form").append(`<input type="text" name="director" value="${data["director"]}" required=true />`);
         $("#edit-form").append(`<input type="text" name="genre" value="${data["genre"]}" required=true />`);
-        $("#edit-form").append(`<button type="submit">Submit</button>`);
+        $("#edit-form").append(`<button class="btn btn-success" type="submit">Submit</button>`);
         $("#backToMovie").append(`<a href="MovieById.html?${movieId}">Back to Movie</a>`);
     })
 })(jQuery);
@@ -113,6 +113,7 @@ function redirectToHomePage(){
         $("#deleteMovieInfo").html(`<li>Title: ${data["title"]}</li>`);
         $("#deleteMovieInfo").append(`<li>Director: ${data["director"]}</li>`);
         $("#deleteMovieInfo").append(`<li>Genre: ${data["genre"]}</li>`);
+        $("#delete-form").append(`<a class="btn btn-secondary" href="MovieById.html?${movieId}">Cancel</a>`)
     });
 })(jQuery);
 
