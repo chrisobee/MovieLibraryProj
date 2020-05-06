@@ -5,10 +5,12 @@ html {
     position: relative;
     left: 50px;
     top:30px;
+    font-size: 100px;
+    font-weight: bolder;
 }
 #movieInfo {
     list-style-type: none;
-    font-size: xx-large;
+    font-size: 50px;
     position: relative;
     left: 50px;
     top:30px;
@@ -21,6 +23,8 @@ html {
     position: relative;
     left: 50px;
     top:30px;
+    font-size: 100px;
+    font-weight: bolder;
 }
 #addNewMovie {
     animation-duration: 50ms;

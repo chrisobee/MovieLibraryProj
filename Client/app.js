@@ -26,8 +26,8 @@ function redirectToHomePage(){
         $("#movieInfo").html(`<li>Title: ${data["title"]}</li>`);
         $("#movieInfo").append(`<li>Director: ${data["director"]}</li>`);
         $("#movieInfo").append(`<li>Genre: ${data["genre"]}</li>`);
-        $("#editMovie").html(`<a style="position: relative; left: 50px; top:30px;" class="btn btn-warning" href="edit.html?${movieId}">Edit Movie</a>`);
-        $("#deleteMovie").html(`<a style="position: relative; left: 50px; top:30px;" class="btn btn-danger" href="delete.html?${movieId}">Delete Movie</a>`)
+        $("#editMovie").html(`<a style="position: relative; left: 70px; top:30px;" class="btn btn-warning" href="edit.html?${movieId}">Edit Movie</a>`);
+        $("#deleteMovie").html(`<a style="position: relative; left: 70px; top:30px;" class="btn btn-danger" href="delete.html?${movieId}">Delete Movie</a>`)
     });
 })(jQuery);
 
