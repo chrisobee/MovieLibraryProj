@@ -69,12 +69,12 @@ function redirectToHomePage(){
 
     $.get(`https://localhost:44325/api/movie/${movieId}`, function(data){
         $("#edit-form").html(`<input type="hidden" name="movieId" value="${movieId}" />`);
-        $("#edit-form").append(`<label for="title">Title:</label><br><input type="text" name="title" value="${data["title"]}" required=true />`);
-        $("#edit-form").append(`<br><label for="director">Director:</label><br><input type="text" name="director" value="${data["director"]}" required=true />`);
-        $("#edit-form").append(`<br><label for="genre">Genre:</label><br><input type="text" name="genre" value="${data["genre"]}" required=true />`);
-        $("#edit-form").append(`<br><label for="imageURL">Image URL:</label><br><input type="text" name="imageURL" value="${data["imageURL"]}" required=true />`)
-        $("#edit-buttons").append(`<button style="position: relative; left: 50px; top:30px;" class="btn btn-success" type="submit">Submit</button>`);
-        $("#edit-buttons").append(` <a style="position: relative; left: 50px; top:30px;" class="btn btn-info" href="MovieById.html?${movieId}">Back to Movie</a>`);
+        $("#edit-form").append(`<label style="position: relative; top: 10px;" for="title">Title:</label><br><input type="text" name="title" value="${data["title"]}" required=true />`);
+        $("#edit-form").append(`<br><label style="position: relative; top: 10px;" for="director">Director:</label><br><input type="text" name="director" value="${data["director"]}" required=true />`);
+        $("#edit-form").append(`<br><label style="position: relative; top: 10px;" for="genre">Genre:</label><br><input type="text" name="genre" value="${data["genre"]}" required=true />`);
+        $("#edit-form").append(`<br><label style="position: relative; top: 10px;" for="imageURL">Image URL:</label><br><input type="text" name="imageURL" value="${data["imageURL"]}" required=true />`)
+        $("#edit-buttons").append(`<button style="position: relative; left: 70px; top:35px;" class="btn btn-success" type="submit">Submit</button>`);
+        $("#edit-buttons").append(`<a style="position: relative; left: 75px; top:35px;" class="btn btn-info" href="MovieById.html?${movieId}">Back to Movie</a>`);
     })
 })(jQuery);
 

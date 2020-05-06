@@ -4,7 +4,7 @@
     <title>Add New Movie</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="bootstrap.flatly.min.css" />
-    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -30,12 +30,12 @@
 <div id="response">
     <pre></pre>
 </div>
-<h2>Add Movie</h2>
+<h2 id="addMovie">Add Movie</h2>
 <form id="my-form">
-    <input type="text" name="title" placeholder="Title" />
-    <input type="text" name="director" placeholder="Director" />
-    <input type="text" name="genre" placeholder="Genre" />
-    <input type="text" name="imageURL" placeholder="Image URL" />
+    <label style="position: relative; top: 10px;" for="title">Title:</label><br><input type="text" name="title" placeholder="Title" /><br>
+    <label style="position: relative; top: 10px;" for="director">Director:</label><br><input type="text" name="director" placeholder="Director" /><br>
+    <label style="position: relative; top: 10px;" for="genre">Genre:</label><br><input type="text" name="genre" placeholder="Genre" /><br>
+    <label style="position: relative; top: 10px;" for="imageURL">Image URL:</label><br><input type="text" name="imageURL" placeholder="Image URL" /><br>
     <div style="margin-top: 10px;">
         <button type="submit" class="btn btn-success">Submit</button>
     </div>
