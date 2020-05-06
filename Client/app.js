@@ -72,8 +72,8 @@ function redirectToHomePage(){
         $("#edit-form").append(`<input type="text" name="title" value="${data["title"]}" required=true />`);
         $("#edit-form").append(`<input type="text" name="director" value="${data["director"]}" required=true />`);
         $("#edit-form").append(`<input type="text" name="genre" value="${data["genre"]}" required=true />`);
-        $("#edit-form").append(`<button class="btn btn-success" type="submit">Submit</button>`);
-        $("#backToMovie").append(`<a href="MovieById.html?${movieId}">Back to Movie</a>`);
+        $("#edit-buttons").append(`<button class="btn btn-success" type="submit">Submit</button>`);
+        $("#edit-buttons").append(` <a class="btn btn-info" href="MovieById.html?${movieId}">Back to Movie</a>`);
     })
 })(jQuery);
 
