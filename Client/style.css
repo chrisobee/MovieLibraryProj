@@ -1,12 +1,26 @@
+html {
+    overflow-x: hidden;
+}
+#selectedMovie{
+    position: relative;
+    left: 50px;
+    top:30px;
+}
 #movieInfo {
     list-style-type: none;
+    font-size: xx-large;
+    position: relative;
+    left: 50px;
+    top:30px;
 }
 #movieTitles {
     list-style-type: none;
     text-align: center;
 }
 #allMovies{
-    text-align: center;
+    position: relative;
+    left: 50px;
+    top:30px;
 }
 #addNewMovie {
     animation-duration: 50ms;
@@ -14,4 +28,7 @@
 .card {
     width: 40%;
     top: 50px;
+}
+#movieTitles a{
+    color: black;
 }
