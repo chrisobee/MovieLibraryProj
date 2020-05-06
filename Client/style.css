@@ -1,0 +1,17 @@
+#movieInfo {
+    list-style-type: none;
+}
+#movieTitles {
+    list-style-type: none;
+    text-align: center;
+}
+#allMovies{
+    text-align: center;
+}
+#addNewMovie {
+    animation-duration: 50ms;
+}
+.card {
+    width: 40%;
+    top: 50px;
+}
