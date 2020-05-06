@@ -36,3 +36,15 @@ html {
 #movieTitles a{
     color: black;
 }
+#editTitle{
+    position: relative;
+    left: 50px;
+    top:30px;
+    font-size: 100px;
+    font-weight: bolder;
+}
+#edit-form{
+    position: relative;
+    left: 50px;
+    top:30px;
+}
