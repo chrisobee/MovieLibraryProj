@@ -10,7 +10,7 @@ function redirectToHomePage(){
             $.each(data, function(index, movie){
                 $("#movieTitles").append(`<li> <div class="card mb-3"><h3 class="card-header">
                 <a href="MovieById.html?${movie["MovieId"]}">${movie["Title"]}</a></h3> 
-                <img style="height: 400px; display: block;" src="${movie["ImageURL"]}" alt="Card image">
+                <img style="height: auto; width: 100%; display: block;" src="${movie["ImageURL"]}" alt="Card image">
                 </div> </li>`);
             });
         },
@@ -36,7 +36,8 @@ function redirectToHomePage(){
         var dict = {
         	Title : this["title"].value,
             Director: this["director"].value,
-            Genre: this["genre"].value
+            Genre: this["genre"].value,
+            ImageURL: this["imageURL"].value
         };
 
         $.ajax({

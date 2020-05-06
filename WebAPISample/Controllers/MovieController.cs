@@ -52,6 +52,7 @@ namespace WebAPISample.Controllers
             movieToUpdate.Title = movie.Title;
             movieToUpdate.Director = movie.Director;
             movieToUpdate.Genre = movie.Genre;
+            movieToUpdate.ImageURL = movie.ImageURL;
             _context.Update(movieToUpdate);
             _context.SaveChanges();
             return Ok();
