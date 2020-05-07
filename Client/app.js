@@ -8,7 +8,7 @@ function redirectToHomePage(){
         dataType: 'json',
         success: function(data){
             $.each(data, function(index, movie){
-                $("#movieTitles").append(`<li> <div class="card mb-3"><h3 class="card-header">
+                $("#movieTitles").append(`<li> <div style="width: inherit; width: 80%;" class="card mb-3"><h3 class="card-header">
                 <a href="MovieById.html?${movie["MovieId"]}">${movie["Title"]}</a></h3> 
                 <img style="height: auto; width: 100%; display: block;" src="${movie["ImageURL"]}" alt="Card image">
                 </div> </li>`);

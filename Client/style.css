@@ -62,3 +62,36 @@ html {
     font-size: 100px;
     font-weight: bolder;
 }
+#deleteTitle {
+    position: relative;
+    left: 50px;
+    top:30px;
+    font-size: 70px;
+    font-weight: bolder;
+}
+#deleteMovieInfo {
+    position: relative;
+    left: 30px;
+    top:30px;
+    font-size: 50px;
+    list-style-type: none;
+}
+#delete-form{
+    position: relative;
+    left: 70px;
+    top:30px;
+    font-size: 25px;
+}
+#Welcome {
+    font-weight: bolder;
+    text-align: center;
+    position: relative;
+    right: 80px;
+    top: 100px
+}
+#statement {
+    text-align: center;
+    position: relative;
+    right: 80px;
+    top: 100px;
+}
