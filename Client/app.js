@@ -1,5 +1,6 @@
 function redirectToHomePage(){
     window.location.replace("GetMovies.html");
+    console.log ("Hello world");
 }
 (function($){
     $.ajax({
@@ -15,7 +16,6 @@ function redirectToHomePage(){
             });
         },
         error: function(errorThrown){
-            console.log (errorThrown);
             console.log (errorThrown);
         } 
     })
