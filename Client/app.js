@@ -16,6 +16,7 @@ function redirectToHomePage(){
         },
         error: function(errorThrown){
             console.log (errorThrown);
+            console.log (errorThrown);
         } 
     })
 })(jQuery);
