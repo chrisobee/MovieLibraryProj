@@ -1,5 +1,6 @@
 function redirectToHomePage(){
     window.location.replace("GetMovies.html");
+    console.log("Hello world");
 }
 (function($){
     $.ajax({
